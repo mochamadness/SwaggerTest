@@ -1,0 +1,46 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "OpenAPI Document on Azure Functions",
+    "description": "This is the OpenAPI Document on Azure Functions",
+    "version": "1.0.0"
+  },
+  "host": "localhost:7165",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Function1": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "GetUsers",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The OK response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "security": [
+          {
+            "function_key": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "function_key": {
+      "type": "apiKey",
+      "name": "code",
+      "in": "query"
+    }
+  }
+}
